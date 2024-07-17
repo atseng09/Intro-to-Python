@@ -36,11 +36,11 @@ print(" ")
 word = "kaleidoscope"
 letters = {}
 
-for s in word:
-    if s in letters.keys():
-        letters[s] +=1
+for i in word:
+    if i in letters.keys():
+        letters[i] +=1
     else:
-        letters[s] =1
+        letters[i] =1
 print(letters)
 
 print(" ")

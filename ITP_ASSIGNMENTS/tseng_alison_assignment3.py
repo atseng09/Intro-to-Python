@@ -3,7 +3,6 @@ print(" ")
 
 #PROBLEM 1
 def is_palindrome(i):
-    # word = "panda"
     i = i.lower()
     reverse = i[::-1]
 

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="static/css/homepage.css">
+    <title>!PROTECT MARINE LIFE!</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/universal.css') }}" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+
+</head>
+
+<body>
+    <div id="topBar">
+        <a id="title">! Protect Marine Life !</a>
+    </div>
+    <div class="bars" id="bar1"></div>
+    <div class="bars" id="bar2"></div>
+
+    <div id="topBar2">
+        <p id="moreInfo">Learn more info below about public data that shows the harm weve caused to not only the ocean,
+            but also its inhabitants.</p>
+    </div>
+
+    <div id="map"></div>
+    <script src="{{ url_for('static', filename='js/universal.js') }}" />
+    </script>
+    <script>
+        {% for marker in markers %}
+        L.marker([{{ marker['lat'] }}, {{ marker['lon'] }}]).addTo(map)
+            .bindPopup("{{ marker['popup'] }}")
+            .openPopup();
+        {% endfor %}
+    </script>
+
+<div id="topBar3">
+    <p id="moreInfo2">Here is a map to explore the locations corresponding to the data below.</p>
+</div>
+
+<div class="bars" id="bar3"></div>
+
+    <h1 class="headers" id="Pollutants">Pollutants</h1>
+    <p class="wbar">._____________________________________________.</p>
+
+    <div id="infoBox1">
+        <p class="text">
+            The data to the right is an organized and graphed interpretation of the "Marine Microplastic Concentrations", tracked by the Nation Oceanic and Atmostpher Administration (NOAA). It reports the 160000+ cases of microplastic concentrations in 3 oceans, the Atlantic, Pacific, and Arctic. These graphs indicate not only the abundant amount of microplastic in our main oceans, but also 
+            how more than half of the cases have quite a severe amount.</p>
+    </div>
+
+
+    <img class="graph" id="graph1" src="{{ url_for('static', filename='graphs/Microplastics1.png') }}" class="image" />
+    <img class="graph" id="graph2" src="{{ url_for('static', filename='graphs/Microplastics2.png') }}" class="image" />
+
+    <div class="bars" id="bar5"></div>
+
+    <img class="graph" id="image1" src="{{ url_for('static', filename='graphs/image1.jpg') }}" class="image" />
+
+    <div class="bars" id="bar3"></div>
+    <div id="infoBox2">
+        <p class="text" id="text2">
+            While the manufacturing industry continues to grow, so do the mounds of plastic and waste that wash up on shores and endanger animals. Without recognizing, we've put our world in harmsway for us and the terrestrial animals, finding it harder and harder to find a clean source of water, and especially for the marine animals, who fall victim to the waste and oil spills. 
+            </p>
+    </div>
+    <div class="bars" id="bar4"></div>
+
+    <img class="graph" id="graph3" src="{{ url_for('static', filename='graphs/Spills3.png') }}" class="image" />
+    <img class="graph" id="graph5" src="{{ url_for('static', filename='graphs/Spills5.png') }}" class="image" />
+    <img class="graph" id="graph4" src="{{ url_for('static', filename='graphs/Spills1.png') }}" class="image" />
+
+
+    <img class="graph" id="graph6" src="{{ url_for('static', filename='graphs/Spills4.png') }}" class="image" />
+    <img class="graph" id="graph8" src="{{ url_for('static', filename='graphs/Spills6.png') }}" class="image" />
+    <img class="graph" id="graph7" src="{{ url_for('static', filename='graphs/Spills2.png') }}" class="image" />
+
+    <div class="bars" id="bar3"></div>
+    <img class="graph" id="graph20" src="{{ url_for('static', filename='graphs/Spills7.png') }}" class="image" />
+    <img class="graph" id="graph21" src="{{ url_for('static', filename='graphs/Spills8.png') }}" class="image" />
+
+    <div class="bars" id="bar3"></div>
+    <div id="infoBox3">
+        <p class="text" id="text3">The 6 charts above are from an Australian company that tracked the reported Pollutant Spills that occured near Queensland, Australia. Even from one section of the world, there were more than 200 REPORTED cases in the span of 3 years. These charts conclude that ships have been the #1 source of the polutant spills and they typically spill diesel and other forms of oil.[ The other listed in the graphs indicate more specific oils and forms of metals and garbage]</p>
+    </div>
+
+    <p id="star"> ~・ °☆゜・。. ・°゜☆ ゜°・ . 。・゜☆ . ~</p>
+
+    <h1 class="headers" id="Harm">Harm on the Animals</h1>
+    <p class="wbar">._____________________________________________.</p>
+
+    <img class="graph" id="image2" src="{{ url_for('static', filename='graphs/image2.jpg') }}" class="image" />
+    <div class="bars" id="bar7"></div>
+
+    <div id="infoBox4">
+        <p class="text" id="text4">While you can easily find some of the animals in aquariums and possibly zoos, some people tend to forget that some of those species, in addition to hundreds more, are actually threatened or endangered species. Admired and highly adored animals like
+            whales, certain types of sharks, manatees, dolphins, sea otters, certain types of seals, and several kinds of fish and coral and running the risk of being extinct!
+        </p>
+    </div>
+    <img class="graph" id="otters" src="{{ url_for('static', filename='graphs/otters.jpeg') }}" class="image" />
+
+    <p id="graphinfo">Do your research!</p>
+
+    <div id="infoBox5">
+        <p class="text" id="text5"> Although this data set is not that big, it speaks and still reflects the data on many other charts. It shows that while some conservation methods do make cases better, there are still several other species that decline. That information is indicated by the graph on the right which specifies if certain conservation movement for each species benefited the group or did the opposite. A MAJORITY of cases got worse.</p>
+    </div>
+
+    <img class="graph" id="graph9" src="{{ url_for('static', filename='graphs/Conservation2.png') }}" class="image" />
+    <img class="graph" id="graph10" src="{{ url_for('static', filename='graphs/Conservation1.png') }}" class="image" />
+
+    <div class="bars" id="bar8"></div>
+    <div class="bars" id="bar9"></div>
+
+    <div id="infoBox6">
+        <p class="text" id="text5"> This set includes several more cases and indicates what the group who gathered the data focused on. It also tells us how land animals, like birds, have also been severly affected, as well as the fish and animals inside the water.
+            The text below is the same data set which shows there are more than 1300 species that are in trouble.
+        </p>
+    </div>
+    <img class="graph" id="graph11" src="{{ url_for('static', filename='graphs/Species1.png') }}" class="image" />
+    <div class="bars" id="bar10"></div>
+    <img class="graph" id="graph12" src="{{ url_for('static', filename='graphs/Species2.png') }}" class="image" />
+
+    <p id="star"> ~・ °☆゜・。. ・°゜☆ ゜°・ . 。・゜☆ . ~</p>
+
+    <h1 class="headers" id="Todo">How Can You Help?</h1>
+    <p class="wbar">._____________________________________________.</p>
+
+    <div id="infoBox7">
+        <p class="text" id="text23">Find ways to help!
+            There are several ways to help even in your community, like hosting beach cleanups or raising money to help with larger cleanups. You can also reduce how much waste your produce by using reusable products.
+            Beyond that, find ways to donate to helpful organizations or become an active community members and help others get envolved!
+            Here are some more tips on ways to help:
+        </p>
+        <a class= "link" href="https://www.oceanicsociety.org/resources/7-ways-to-reduce-ocean-plastic-pollution-today/">7 Ways to
+            Reduce Plastic Pollution</a>
+        <a class= "link" href="https://oceana.org/10-ways-you-can-help-save-the-oceans/">10 Ways you can Help Save the Ocean</a>
+        <a class= "link" href="https://oceanservice.noaa.gov/ocean/help-our-ocean.html">Help Our Oceans</a>
+    </div>
+
+
+
+
+</body>
+
+</html>
